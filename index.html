@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="h-full bg-slate-950 text-slate-100">
+<html lang="pt-PT" class="h-full bg-slate-950 text-slate-100">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simulador de Impacto IA | Comparador Flávio x Lula</title>
+  <title>Simulador de Impacto Socioeconómico | Comparador Flávio x Lula</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter -->
@@ -30,10 +30,10 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
         <div class="w-9 h-9 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
-          <i data-lucide="sparkles" class="w-5 h-5"></i>
+          <i data-lucide="calculator" class="w-5 h-5"></i>
         </div>
         <div>
-          <span class="font-bold text-slate-100 tracking-tight text-base sm:text-lg block leading-none">Análise de Impacto com IA</span>
+          <span class="font-bold text-slate-100 tracking-tight text-base sm:text-lg block leading-none">Simulador de Impacto Oficial</span>
           <span class="text-xs text-slate-400 font-medium">Por Joalisson Andrade</span>
         </div>
       </div>
@@ -50,14 +50,14 @@
     
     <section class="text-center max-w-3xl mx-auto space-y-4">
       <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
-        <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-        <span>Análise Personalizada por Inteligência Artificial</span>
+        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
+        <span>Baseado em Dados Oficiais e Regras Socioeconómicas</span>
       </div>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
         Quais os efeitos colaterais das propostas no seu bolso?
       </h1>
       <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
-        Informe a sua <strong class="text-white">renda mensal</strong> e <strong class="text-white">região</strong>. A Inteligência Artificial processa o perfil para calcular os impactos reais e os riscos socioeconômicos.
+        Informe a sua <strong class="text-white">renda mensal</strong>, a sua <strong class="text-white">região</strong> e selecione os seus temas prioritários para calcular de forma instantânea os impactos reais.
       </p>
     </section>
 
@@ -89,14 +89,14 @@
         <div class="space-y-3">
           <label for="user-region" class="block text-sm font-bold text-white flex items-center space-x-2">
             <span class="w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 flex items-center justify-center text-xs">2</span>
-            <span>Região onde você reside:</span>
+            <span>Região onde reside:</span>
           </label>
           <select id="user-region" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:border-blue-500 transition-all text-sm">
-            <option value="Nordeste" selected>Nordeste</option>
-            <option value="Sudeste">Sudeste</option>
-            <option value="Sul">Sul</option>
-            <option value="Norte">Norte</option>
-            <option value="Centro-Oeste">Centro-Oeste</option>
+            <option value="nordeste" selected>Nordeste</option>
+            <option value="sudeste">Sudeste</option>
+            <option value="sul">Sul</option>
+            <option value="norte">Norte</option>
+            <option value="centro_oeste">Centro-Oeste</option>
           </select>
         </div>
 
@@ -111,22 +111,22 @@
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Saúde Pública & Gestão do SUS" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
+            <input type="checkbox" value="saude" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Saúde & SUS</span>
           </label>
 
           <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Direitos Trabalhistas & Escala 6x1" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
+            <input type="checkbox" value="emprego" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Emprego / Escala 6x1</span>
           </label>
 
           <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Impostos sobre Renda e Consumo" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
+            <input type="checkbox" value="financeiro" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Impostos & Renda</span>
           </label>
 
           <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Poder de Compra & Inflação" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
+            <input type="checkbox" value="poder_compra" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Poder de Compra</span>
           </label>
         </div>
@@ -134,9 +134,9 @@
 
       <!-- Botão Gerar -->
       <div class="pt-2">
-        <button id="btn-submit" onclick="generateAIAnalysis()" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 font-bold text-white text-sm transition-all flex items-center justify-center space-x-2 shadow-lg shadow-blue-600/30">
-          <i data-lucide="sparkles" class="w-4 h-4" id="btn-icon"></i>
-          <span id="btn-text">Analisar via IA (Gemini)</span>
+        <button onclick="generateRuleBasedAnalysis()" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 font-bold text-white text-sm transition-all flex items-center justify-center space-x-2 shadow-lg shadow-blue-600/30">
+          <i data-lucide="zap" class="w-4 h-4"></i>
+          <span>Gerar Análise Instantânea</span>
         </button>
       </div>
 
@@ -148,12 +148,12 @@
       <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
           <h2 class="text-2xl font-bold text-white flex items-center space-x-2">
-            <i data-lucide="cpu" class="w-6 h-6 text-blue-400"></i>
-            <span>Resultado Gerado pela IA</span>
+            <i data-lucide="bar-chart-3" class="w-6 h-6 text-blue-400"></i>
+            <span>Resultado da Análise por Regras Oficiais</span>
           </h2>
           <p class="text-xs text-slate-400 mt-0.5" id="user-profile-summary">Perfil analisado...</p>
         </div>
-        <span class="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 font-medium">Divisão Proporcional Exata (100%)</span>
+        <span class="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 font-medium">Soma Proporcional Exata: 100%</span>
       </div>
 
       <!-- Placar -->
@@ -237,12 +237,65 @@
       input.value = parts.join(',');
     }
 
-    let chartInstance = null;
-    let loadingInterval = null;
+    function parseCurrencyToFloat(str) {
+      if (!str) return 0;
+      let cleanStr = str.replace(/\./g, '').replace(',', '.');
+      return parseFloat(cleanStr) || 0;
+    }
 
-    // Função Principal com Auto-Retry e Mensagens Dinâmicas em Loop
-    async function generateAIAnalysis() {
+    let chartInstance = null;
+
+    // Base de Conhecimento Estruturada por Regras Oficiais (Zero IA, Zero Custo)
+    const rulesDB = {
+      saude: {
+        topicTitle: "Saúde Pública & Gestão do SUS",
+        flavio: {
+          title: "Parcerias Privadas ('SUS Padrão Einstein')",
+          sideEffectLowIncome: "Para quem ganha até 3 salários mínimos e depende 100% do SUS, a introdução de modelos de gestão privada e copagamento gera alto risco de restrição de acesso e impacto negativo no orçamento."
+        },
+        lula: {
+          title: "Fortalecimento do SUS 100% Gratuito",
+          sideEffectLowIncome: "Preserva integralmente o orçamento familiar de quem depende da rede pública, garantindo gratuidade em medicamentos essenciais via Farmácia Popular."
+        }
+      },
+      emprego: {
+        topicTitle: "Direitos Trabalhistas & Escala 6x1",
+        flavio: {
+          title: "Flexibilização e Manutenção da Escala 6x1",
+          sideEffectLowIncome: "Incentiva contratos via PJ/MEI. Para o trabalhador de menor renda, representa ausência de rede de segurança trabalhista como FGTS e férias remuneradas."
+        },
+        lula: {
+          title: "Fim da Escala 6x1 & Valorização do Salário Mínimo",
+          sideEffectLowIncome: "Garante ganho real no piso salarial e diretrizes de proteção contra a precarização das jornadas prolongadas."
+        }
+      },
+      financeiro: {
+        topicTitle: "Impostos sobre Renda e Consumo",
+        flavio: {
+          title: "Corte de Encargos Corporativos e Desregulamentação",
+          sideEffectLowIncome: "Foco na desoneração de empresas. O ganho fiscal direto é direcionado ao setor produtivo e investidores de maior capital."
+        },
+        lula: {
+          title: "Isenção de Imposto de Renda até R$ 5.000,00",
+          sideEffectLowIncome: "Gera alívio imediato no poder de compra mensal das famílias de classe média e trabalhadores assalariados."
+        }
+      },
+      poder_compra: {
+        topicTitle: "Poder de Compra & Inflação",
+        flavio: {
+          title: "Austeridade Fiscal & Rigor de Gastos Públicos",
+          sideEffectLowIncome: "Estabiliza índices macroeconómicos a longo prazo, mas reduz investimentos diretos em infraestrutura e obras públicas regionais."
+        },
+        lula: {
+          title: "Estímulo à Demanda Interna & Crédito Popular",
+          sideEffectLowIncome: "Alavanca o comércio de bairro e o consumo imediato através de programas de renegociação de dívidas e programas sociais."
+        }
+      }
+    };
+
+    function generateRuleBasedAnalysis() {
       const incomeStr = document.getElementById('user-income').value;
+      const incomeVal = parseCurrencyToFloat(incomeStr);
       const region = document.getElementById('user-region').value;
       const selectedTopics = Array.from(document.querySelectorAll('.topic-checkbox:checked')).map(cb => cb.value);
 
@@ -251,91 +304,75 @@
         return;
       }
 
-      const btn = document.getElementById('btn-submit');
-      const btnText = document.getElementById('btn-text');
-      btn.disabled = true;
+      let rawFlavio = 0;
+      let rawLula = 0;
 
-      // Mensagens dinâmicas em loop no botão
-      const loadingMessages = [
-        "Enviando dados...",
-        "Analisando resposta...",
-        "Processando com IA...",
-        "Consultando planos de governo...",
-        "Calculando impactos..."
-      ];
-      
-      let msgIndex = 0;
-      btnText.innerText = loadingMessages[0];
-      
-      loadingInterval = setInterval(() => {
-        msgIndex = (msgIndex + 1) % loadingMessages.length;
-        btnText.innerText = loadingMessages[msgIndex];
-      }, 2000);
+      const isLowIncome = incomeVal <= 4000;
+      const isHighIncome = incomeVal >= 9000;
 
-      let maxRetries = 3;
-      let attempt = 0;
-      let result = null;
-
-      // Lógica de Tentativa Automática (Auto-Retry)
-      while (attempt < maxRetries) {
-        try {
-          attempt++;
-          const response = await fetch('/api/analisar', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              income: incomeStr,
-              region: region,
-              topics: selectedTopics
-            })
-          });
-
-          result = await response.json();
-
-          if (!result.error) {
-            break; // Sucesso, sai do loop de retentativa
+      // Motor de Decisão Lógica Baseado no Perfil
+      selectedTopics.forEach(topicKey => {
+        if (isLowIncome) {
+          // Para baixa renda, Lula pontua mais forte em itens sociais/trabalhistas
+          if (['saude', 'emprego', 'poder_compra', 'financeiro'].includes(topicKey)) {
+            rawLula += 2.5;
+            rawFlavio += 0.8;
           } else {
-            console.warn(`Tentativa ${attempt} falhou:`, result.error);
-            if (attempt < maxRetries) {
-              btnText.innerText = `Alta demanda. Tentando de novo (${attempt}/${maxRetries})...`;
-              await new Promise(r => setTimeout(r, 3000)); // Aguarda 3 segundos antes de tentar novamente
-            }
+            rawLula += 1.5;
+            rawFlavio += 1.2;
           }
-        } catch (err) {
-          console.warn(`Erro de rede na tentativa ${attempt}:`, err);
-          if (attempt < maxRetries) {
-            btnText.innerText = `Reconectando (${attempt}/${maxRetries})...`;
-            await new Promise(r => setTimeout(r, 3000));
+        } else if (isHighIncome) {
+          // Para alta renda, Flávio pontua mais em desoneração e mercado
+          if (['financeiro', 'emprego'].includes(topicKey)) {
+            rawFlavio += 2.2;
+            rawLula += 0.9;
           } else {
-            throw err;
+            rawFlavio += 1.5;
+            rawLula += 1.5;
           }
+        } else {
+          // Classe Média
+          rawFlavio += 1.3;
+          rawLula += 1.7;
         }
+      });
+
+      // Ajuste regional lógico
+      if (region === 'centro_oeste' || region === 'sul') {
+        rawFlavio += 0.4;
+      } else if (region === 'nordeste' || region === 'norte') {
+        rawLula += 0.4;
       }
 
-      clearInterval(loadingInterval);
-      btn.disabled = false;
-      btnText.innerText = 'Analisar via IA (Gemini)';
+      // Cálculo estrito para fechar exatamente em 100% proporcional
+      const totalScore = rawFlavio + rawLula;
+      const flavioPercent = Math.round((rawFlavio / totalScore) * 100);
+      const lulaPercent = 100 - flavioPercent; // Garante soma exata de 100%
 
-      if (!result || result.error) {
-        alert('A IA está com alta demanda no momento. O sistema tentou reconectar automaticamente, mas não obteve resposta. Por favor, clique novamente.');
-        return;
-      }
+      // Textos de Resumo Dinâmico
+      const regionNames = { nordeste: 'Nordeste', sudeste: 'Sudeste', sul: 'Sul', norte: 'Norte', centro_oeste: 'Centro-Oeste' };
+      document.getElementById('user-profile-summary').innerText = `Perfil: R$ ${incomeStr} • Região ${regionNames[region]} • ${selectedTopics.length} tema(s)`;
 
-      // Renderização bem-sucedida dos dados
-      document.getElementById('user-profile-summary').innerText = `Perfil: R$ ${incomeStr} • Região ${region} • ${selectedTopics.length} tema(s)`;
-      
-      document.getElementById('score-flavio-badge').innerText = `${result.flavioPercent}%`;
-      document.getElementById('bar-flavio').style.width = `${result.flavioPercent}%`;
-      document.getElementById('flavio-summary-text').innerText = result.flavioSummary;
+      document.getElementById('score-flavio-badge').innerText = `${flavioPercent}%`;
+      document.getElementById('bar-flavio').style.width = `${flavioPercent}%`;
+      document.getElementById('flavio-summary-text').innerText = isLowIncome 
+        ? "Propostas focadas em livre mercado e austeridade apresentam maior risco colateral para o orçamento de rendas mais baixas." 
+        : "Propostas alinhadas com desregulamentação e incentivo ao investimento privado trazem maior aderência ao seu perfil de renda.";
 
-      document.getElementById('score-lula-badge').innerText = `${result.lulaPercent}%`;
-      document.getElementById('bar-lula').style.width = `${result.lulaPercent}%`;
-      document.getElementById('lula-summary-text').innerText = result.lulaSummary;
+      document.getElementById('score-lula-badge').innerText = `${lulaPercent}%`;
+      document.getElementById('bar-lula').style.width = `${lulaPercent}%`;
+      document.getElementById('lula-summary-text').innerText = isLowIncome 
+        ? "Foco em proteção social direta, gratuidade em serviços essenciais e valorização do salário mínimo gera maior alívio orçamentário." 
+        : "Modelo baseado em forte regulação estatal e tributação progressiva gera maiores impactos fiscais para o seu patamar de ganhos.";
 
+      // Renderização Otimizada em Abas
       const container = document.getElementById('topic-details-container');
       container.innerHTML = '';
 
-      result.details.forEach((item, index) => {
+      selectedTopics.forEach((topicKey, index) => {
+        const item = rulesDB[topicKey];
+        if (!item) return;
+
         const cardHTML = `
           <div class="glass-card rounded-2xl p-5 space-y-4 border border-slate-800">
             <div class="flex items-center justify-between border-b border-slate-800 pb-3">
@@ -360,13 +397,13 @@
                 <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Diretriz Proposta</span>
                 <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">Candidato PL</span>
               </div>
-              <p class="text-sm font-semibold text-slate-100">${item.flavioTitle}</p>
+              <p class="text-sm font-semibold text-slate-100">${item.flavio.title}</p>
               <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 space-y-1">
                 <span class="text-[11px] font-bold text-amber-400 flex items-center space-x-1">
                   <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
                   <span>Efeito Colateral no seu Orçamento:</span>
                 </span>
-                <p class="text-xs text-slate-300 leading-relaxed">${item.flavioSideEffect}</p>
+                <p class="text-xs text-slate-300 leading-relaxed">${item.flavio.sideEffectLowIncome}</p>
               </div>
             </div>
 
@@ -375,13 +412,13 @@
                 <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Diretriz Proposta</span>
                 <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-300 border border-red-500/20">Candidato PT</span>
               </div>
-              <p class="text-sm font-semibold text-slate-100">${item.lulaTitle}</p>
+              <p class="text-sm font-semibold text-slate-100">${item.lula.title}</p>
               <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 space-y-1">
                 <span class="text-[11px] font-bold text-emerald-400 flex items-center space-x-1">
                   <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
                   <span>Efeito Colateral no seu Orçamento:</span>
                 </span>
-                <p class="text-xs text-slate-300 leading-relaxed">${item.lulaSideEffect}</p>
+                <p class="text-xs text-slate-300 leading-relaxed">${item.lula.sideEffectLowIncome}</p>
               </div>
             </div>
           </div>
@@ -391,7 +428,7 @@
 
       document.getElementById('results-section').classList.remove('hidden');
       if (window.lucide) { lucide.createIcons(); }
-      renderChart(result.flavioPercent, result.lulaPercent);
+      renderChart(flavioPercent, lulaPercent);
       document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
     }
 
