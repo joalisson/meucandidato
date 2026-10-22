@@ -1,6 +1,6 @@
-// api/analisar.js (Versão com Endpoint do Gemini Atualizado)
+// api/analisar.js (Versão Final com gemini-3.8-flash)
 export default async function handler(req, res) {
-  // Configurações de CORS para requisições do frontend
+  // Configurações de CORS
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
@@ -52,9 +52,9 @@ Sua resposta DEVE ser estritamente em formato JSON válido (sem textos antes ou 
 }
 `;
 
-    // Endpoint atualizado utilizando a família de modelos Gemini Flash ativos
+    // Atualizado com o modelo recomendado gemini-3.8-flash
     const apiResponse = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -77,8 +77,6 @@ Sua resposta DEVE ser estritamente em formato JSON válido (sem textos antes ou 
     }
 
     const rawText = data.candidates[0].content.parts[0].text;
-    
-    // Tratamento para garantir a limpeza de eventuais marcadores markdown
     const cleanJsonText = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
     const jsonResult = JSON.parse(cleanJsonText);
 
