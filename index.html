@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full bg-slate-950 text-slate-100">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador de Impacto IA | Comparador Flávio x Lula</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass-card {
+      background: rgba(30, 41, 59, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white">
+
+  <!-- Header / Navbar -->
+  <header class="border-b border-slate-800 bg-slate-900/60 sticky top-0 z-50 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="font-bold text-slate-100 tracking-tight text-base sm:text-lg block leading-none">Análise de Impacto com IA</span>
+          <span class="text-xs text-slate-400 font-medium">Por Joalisson Andrade</span>
+        </div>
+      </div>
+      
+      <!-- Botão Voltar -->
+      <a href="site-politico.html" class="inline-flex items-center space-x-2 text-xs text-slate-300 hover:text-white bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors">
+        <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+        <span>Voltar ao Portal</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 flex-grow">
+    
+    <!-- Hero / Apresentação -->
+    <section class="text-center max-w-3xl mx-auto space-y-4">
+      <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
+        <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+        <span>Processamento via Gemini AI em Tempo Real</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+        Análise de Efeitos Colaterais com IA
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
+        Informe sua <strong class="text-white">renda mensal</strong> e <strong class="text-white">região</strong>. A Inteligência Artificial analisa os planos de governo de <strong class="text-blue-400">Flávio Bolsonaro</strong> e <strong class="text-red-400">Lula</strong> para calcular os impactos e riscos no seu orçamento familiar.
+      </p>
+    </section>
+
+    <!-- Formulário Interativo -->
+    <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-8">
+      
+      <!-- Passo 1: Perfil Socioeconômico -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Campo Renda -->
+        <div class="space-y-3">
+          <label for="user-income" class="block text-sm font-bold text-white flex items-center space-x-2">
+            <span class="w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 flex items-center justify-center text-xs">1</span>
+            <span>Renda Mensal Pessoal (R$):</span>
+          </label>
+          <div class="relative">
+            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400 font-bold text-sm">R$</span>
+            <input 
+              type="text" 
+              id="user-income" 
+              placeholder="4.000,00" 
+              value="4.000,00"
+              oninput="formatCurrencyInput(this)"
+              class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-12 pr-4 py-2.5 text-white font-mono font-bold focus:outline-none focus:border-blue-500 transition-all text-lg"
+            >
+          </div>
+          <p class="text-[11px] text-slate-400">Exemplo: 1.412,00 ou 4.000,00 (Somente numerais).</p>
+        </div>
+
+        <!-- Campo Região -->
+        <div class="space-y-3">
+          <label for="user-region" class="block text-sm font-bold text-white flex items-center space-x-2">
+            <span class="w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 flex items-center justify-center text-xs">2</span>
+            <span>Região onde reside:</span>
+          </label>
+          <select id="user-region" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:border-blue-500 transition-all text-sm">
+            <option value="Nordeste" selected>Nordeste</option>
+            <option value="Sudeste">Sudeste</option>
+            <option value="Sul">Sul</option>
+            <option value="Norte">Norte</option>
+            <option value="Centro-Oeste">Centro-Oeste</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- Passo 2: Temas -->
+      <div class="space-y-4 pt-4 border-t border-slate-800">
+        <label class="block text-sm font-bold text-white flex items-center space-x-2">
+          <span class="w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 flex items-center justify-center text-xs">3</span>
+          <span>Selecione seus temas prioritários:</span>
+        </label>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
+            <input type="checkbox" value="Saúde & SUS" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800" checked>
+            <span class="text-xs sm:text-sm font-medium text-slate-200">Saúde & SUS</span>
+          </label>
+
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
+            <input type="checkbox" value="Emprego e Escala 6x1" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800" checked>
+            <span class="text-xs sm:text-sm font-medium text-slate-200">Emprego / Escala 6x1</span>
+          </label>
+
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
+            <input type="checkbox" value="Impostos e Renda" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800" checked>
+            <span class="text-xs sm:text-sm font-medium text-slate-200">Impostos & Renda</span>
+          </label>
+
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
+            <input type="checkbox" value="Poder de Compra e Inflação" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800" checked>
+            <span class="text-xs sm:text-sm font-medium text-slate-200">Poder de Compra</span>
+          </label>
+
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
+            <input type="checkbox" value="Educação Pública e Vouchers" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800">
+            <span class="text-xs sm:text-sm font-medium text-slate-200">Educação Pública</span>
+          </label>
+
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
+            <input type="checkbox" value="Segurança Pública e Armamento" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800">
+            <span class="text-xs sm:text-sm font-medium text-slate-200">Segurança Pública</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Botão Gerar -->
+      <div class="pt-2">
+        <button id="btn-submit" onclick="generateAIAnalysis()" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 font-bold text-white text-sm transition-all flex items-center justify-center space-x-2 shadow-lg shadow-blue-600/30">
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <span id="btn-text">Analisar via IA (Gemini)</span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- Resultados -->
+    <section id="results-section" class="space-y-8 hidden">
+      
+      <div class="border-b border-slate-800 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div>
+          <h2 class="text-2xl font-bold text-white flex items-center space-x-2">
+            <i data-lucide="cpu" class="w-6 h-6 text-blue-400"></i>
+            <span>Resultado Gerado pela IA</span>
+          </h2>
+          <p class="text-xs text-slate-400 mt-0.5" id="user-profile-summary">Perfil analisado...</p>
+        </div>
+        <span class="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 font-medium">Soma Exata: 100%</span>
+      </div>
+
+      <!-- Placar e Gráfico Proporcional (Soma = 100%) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Score Flávio -->
+        <div class="glass-card rounded-2xl p-6 border-t-4 border-t-blue-500 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Flávio Bolsonaro</span>
+                <h3 class="text-xl font-bold text-white" id="score-flavio-badge">0%</h3>
+              </div>
+            </div>
+            <div class="mt-4 space-y-2">
+              <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                <div id="bar-flavio" class="bg-blue-500 h-full rounded-full transition-all duration-700" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="flavio-summary-text">Aguardando IA...</p>
+        </div>
+
+        <!-- Gráfico de Rosca -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center">
+          <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider mb-4">Divisão Proporcional (100%)</h4>
+          <div class="w-full max-w-[200px] relative">
+            <canvas id="impactChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Score Lula -->
+        <div class="glass-card rounded-2xl p-6 border-t-4 border-t-red-500 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start">
+              <div>
+                <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Lula da Silva</span>
+                <h3 class="text-xl font-bold text-white" id="score-lula-badge">0%</h3>
+              </div>
+            </div>
+            <div class="mt-4 space-y-2">
+              <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
+                <div id="bar-lula" class="bg-red-500 h-full rounded-full transition-all duration-700" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="lula-summary-text">Aguardando IA...</p>
+        </div>
+
+      </div>
+
+      <!-- Detalhamento dos Efeitos Colaterais -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-bold text-white flex items-center space-x-2">
+          <i data-lucide="alert-circle" class="w-5 h-5 text-amber-400"></i>
+          <span>Detalhamento de Riscos e Efeitos Colaterais por Tema</span>
+        </h3>
+
+        <div id="topic-details-container" class="space-y-4">
+          <!-- Injetado dinamicamente via JS -->
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    if (window.lucide) { lucide.createIcons(); }
+
+    function formatCurrencyInput(input) {
+      let value = input.value.replace(/\D/g, '');
+      if (value === '') { input.value = ''; return; }
+      let floatValue = (parseInt(value, 10) / 100).toFixed(2);
+      let parts = floatValue.split('.');
+      parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+      input.value = parts.join(',');
+    }
+
+    let chartInstance = null;
+
+    async function generateAIAnalysis() {
+      const incomeStr = document.getElementById('user-income').value;
+      const region = document.getElementById('user-region').value;
+      const selectedTopics = Array.from(document.querySelectorAll('.topic-checkbox:checked')).map(cb => cb.value);
+
+      if (selectedTopics.length === 0) {
+        alert("Selecione ao menos 1 tema!");
+        return;
+      }
+
+      // UI State: Carregando
+      const btn = document.getElementById('btn-submit');
+      const btnText = document.getElementById('btn-text');
+      btn.disabled = true;
+      btnText.innerText = 'Processando na IA...';
+
+      try {
+        const response = await fetch('/api/analisar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            income: incomeStr,
+            region: region,
+            topics: selectedTopics
+          })
+        });
+
+        const result = await response.json();
+
+        if (result.error) {
+          alert('Erro na IA: ' + result.error);
+          return;
+        }
+
+        // Atualiza Interface
+        document.getElementById('user-profile-summary').innerText = `Perfil: R$ ${incomeStr} • Região ${region}`;
+        
+        document.getElementById('score-flavio-badge').innerText = `${result.flavioPercent}%`;
+        document.getElementById('bar-flavio').style.width = `${result.flavioPercent}%`;
+        document.getElementById('flavio-summary-text').innerText = result.flavioSummary;
+
+        document.getElementById('score-lula-badge').innerText = `${result.lulaPercent}%`;
+        document.getElementById('bar-lula').style.width = `${result.lulaPercent}%`;
+        document.getElementById('lula-summary-text').innerText = result.lulaSummary;
+
+        // Renderiza Detalhes
+        const container = document.getElementById('topic-details-container');
+        container.innerHTML = '';
+
+        result.details.forEach(item => {
+          const cardHTML = `
+            <div class="glass-card rounded-xl p-5 space-y-4">
+              <h4 class="font-bold text-white text-sm border-b border-slate-800 pb-2">${item.topicTitle}</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                <!-- Flávio -->
+                <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 space-y-2">
+                  <span class="font-bold text-blue-400">Flávio Bolsonaro</span>
+                  <p class="text-slate-200 font-medium">${item.flavioTitle}</p>
+                  <p class="text-amber-300/90 text-[11px] leading-relaxed pt-1 border-t border-slate-800">${item.flavioSideEffect}</p>
+                </div>
+                <!-- Lula -->
+                <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 space-y-2">
+                  <span class="font-bold text-red-400">Lula da Silva</span>
+                  <p class="text-slate-200 font-medium">${item.lulaTitle}</p>
+                  <p class="text-emerald-300/90 text-[11px] leading-relaxed pt-1 border-t border-slate-800">${item.lulaSideEffect}</p>
+                </div>
+              </div>
+            </div>
+          `;
+          container.innerHTML += cardHTML;
+        });
+
+        document.getElementById('results-section').classList.remove('hidden');
+        renderChart(result.flavioPercent, result.lulaPercent);
+        document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+
+      } catch (err) {
+        console.error(err);
+        alert('Ocorreu uma falha na comunicação com o servidor da IA.');
+      } finally {
+        btn.disabled = false;
+        btnText.innerText = 'Analisar via IA (Gemini)';
+      }
+    }
+
+    function renderChart(flavioVal, lulaVal) {
+      const ctx = document.getElementById('impactChart').getContext('2d');
+      if (chartInstance) { chartInstance.destroy(); }
+
+      chartInstance = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Flávio Bolsonaro', 'Lula da Silva'],
+          datasets: [{
+            data: [flavioVal, lulaVal],
+            backgroundColor: ['#3b82f6', '#ef4444'],
+            borderColor: '#0f172a',
+            borderWidth: 3
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: { legend: { display: false } },
+          cutout: '70%'
+        }
+      });
+    }
+  </script>
+</body>
+</html>
