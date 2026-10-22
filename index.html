@@ -61,13 +61,13 @@
     <section class="text-center max-w-3xl mx-auto space-y-4">
       <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
         <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
-        <span>Processamento via Gemini AI em Tempo Real</span>
+        <span>Análise Personalizada por Inteligência Artificial</span>
       </div>
       <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-        Análise de Efeitos Colaterais com IA
+        Quais os efeitos colaterais das propostas no seu bolso?
       </h1>
       <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
-        Informe sua <strong class="text-white">renda mensal</strong> e <strong class="text-white">região</strong>. A Inteligência Artificial analisa os planos de governo de <strong class="text-blue-400">Flávio Bolsonaro</strong> e <strong class="text-red-400">Lula</strong> para calcular os impactos e riscos no seu orçamento familiar.
+        Informe a sua <strong class="text-white">renda mensal</strong> e <strong class="text-white">região</strong>. A Inteligência Artificial processa o perfil para calcular os impactos reais e os riscos socioeconômicos das propostas de <strong class="text-blue-400">Flávio Bolsonaro</strong> e <strong class="text-red-400">Lula da Silva</strong>.
       </p>
     </section>
 
@@ -94,14 +94,14 @@
               class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-12 pr-4 py-2.5 text-white font-mono font-bold focus:outline-none focus:border-blue-500 transition-all text-lg"
             >
           </div>
-          <p class="text-[11px] text-slate-400">Exemplo: 1.412,00 ou 4.000,00 (Somente numerais).</p>
+          <p class="text-[11px] text-slate-400">Exemplo: 1.412,00 ou 4.000,00 (Apenas numerais).</p>
         </div>
 
         <!-- Campo Região -->
         <div class="space-y-3">
           <label for="user-region" class="block text-sm font-bold text-white flex items-center space-x-2">
             <span class="w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 flex items-center justify-center text-xs">2</span>
-            <span>Região onde reside:</span>
+            <span>Região onde você reside:</span>
           </label>
           <select id="user-region" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white font-medium focus:outline-none focus:border-blue-500 transition-all text-sm">
             <option value="Nordeste" selected>Nordeste</option>
@@ -114,42 +114,52 @@
 
       </div>
 
-      <!-- Passo 2: Temas -->
+      <!-- Passo 2: Temas de Interesse -->
       <div class="space-y-4 pt-4 border-t border-slate-800">
         <label class="block text-sm font-bold text-white flex items-center space-x-2">
           <span class="w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 flex items-center justify-center text-xs">3</span>
-          <span>Selecione seus temas prioritários:</span>
+          <span>Selecione seus temas prioritários (escolha ao menos 1):</span>
         </label>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
-            <input type="checkbox" value="Saúde & SUS" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800" checked>
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
+            <input type="checkbox" value="Saúde Pública & Gestão do SUS" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Saúde & SUS</span>
           </label>
 
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
-            <input type="checkbox" value="Emprego e Escala 6x1" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800" checked>
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
+            <input type="checkbox" value="Direitos Trabalhistas & Escala 6x1" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Emprego / Escala 6x1</span>
           </label>
 
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
-            <input type="checkbox" value="Impostos e Renda" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800" checked>
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
+            <input type="checkbox" value="Impostos sobre Renda e Consumo" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Impostos & Renda</span>
           </label>
 
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
-            <input type="checkbox" value="Poder de Compra e Inflação" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800" checked>
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
+            <input type="checkbox" value="Poder de Compra & Inflação" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Poder de Compra</span>
           </label>
 
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
-            <input type="checkbox" value="Educação Pública e Vouchers" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800">
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
+            <input type="checkbox" value="Educação Pública vs Vouchers Privados" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0">
             <span class="text-xs sm:text-sm font-medium text-slate-200">Educação Pública</span>
           </label>
 
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 p-3.5 rounded-xl flex items-center space-x-3">
-            <input type="checkbox" value="Segurança Pública e Armamento" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800">
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
+            <input type="checkbox" value="Segurança Pública & Porte de Armas" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0">
             <span class="text-xs sm:text-sm font-medium text-slate-200">Segurança Pública</span>
+          </label>
+
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
+            <input type="checkbox" value="Agronegócio & Meio Ambiente" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0">
+            <span class="text-xs sm:text-sm font-medium text-slate-200">Agronegócio & Clima</span>
+          </label>
+
+          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
+            <input type="checkbox" value="Judiciário & Relação com o STF" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0">
+            <span class="text-xs sm:text-sm font-medium text-slate-200">Judiciário & STF</span>
           </label>
         </div>
       </div>
@@ -175,10 +185,10 @@
           </h2>
           <p class="text-xs text-slate-400 mt-0.5" id="user-profile-summary">Perfil analisado...</p>
         </div>
-        <span class="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 font-medium">Soma Exata: 100%</span>
+        <span class="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 font-medium">Divisão Proporcional Exata (100%)</span>
       </div>
 
-      <!-- Placar e Gráfico Proporcional (Soma = 100%) -->
+      <!-- Placar Geral e Gráfico -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         <!-- Score Flávio -->
@@ -186,9 +196,10 @@
           <div>
             <div class="flex justify-between items-start">
               <div>
-                <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Flávio Bolsonaro</span>
-                <h3 class="text-xl font-bold text-white" id="score-flavio-badge">0%</h3>
+                <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Candidato PL</span>
+                <h3 class="text-2xl font-black text-white mt-1" id="score-flavio-badge">0%</h3>
               </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">Flávio Bolsonaro</span>
             </div>
             <div class="mt-4 space-y-2">
               <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
@@ -196,7 +207,7 @@
               </div>
             </div>
           </div>
-          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="flavio-summary-text">Aguardando IA...</p>
+          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="flavio-summary-text">Aguardando análise da IA...</p>
         </div>
 
         <!-- Gráfico de Rosca -->
@@ -212,9 +223,10 @@
           <div>
             <div class="flex justify-between items-start">
               <div>
-                <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Lula da Silva</span>
-                <h3 class="text-xl font-bold text-white" id="score-lula-badge">0%</h3>
+                <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Candidato PT</span>
+                <h3 class="text-2xl font-black text-white mt-1" id="score-lula-badge">0%</h3>
               </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-300 border border-red-500/20">Lula da Silva</span>
             </div>
             <div class="mt-4 space-y-2">
               <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
@@ -222,26 +234,40 @@
               </div>
             </div>
           </div>
-          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="lula-summary-text">Aguardando IA...</p>
+          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="lula-summary-text">Aguardando análise da IA...</p>
         </div>
 
       </div>
 
-      <!-- Detalhamento dos Efeitos Colaterais -->
+      <!-- Detalhamento Otimizado com Sistema de Abas (UI Limpa) -->
       <div class="space-y-4">
         <h3 class="text-lg font-bold text-white flex items-center space-x-2">
-          <i data-lucide="alert-circle" class="w-5 h-5 text-amber-400"></i>
-          <span>Detalhamento de Riscos e Efeitos Colaterais por Tema</span>
+          <i data-lucide="layers" class="w-5 h-5 text-amber-400"></i>
+          <span>Detalhamento por Tema e Comparativo de Abas</span>
         </h3>
 
         <div id="topic-details-container" class="space-y-4">
-          <!-- Injetado dinamicamente via JS -->
+          <!-- Injetado dinamicamente via JavaScript -->
         </div>
       </div>
 
     </section>
 
   </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-900/80 py-6 mt-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+      <div>
+        <p>© 2026 Desenvolvido por <strong class="text-slate-200">Joalisson Andrade</strong>. Todos os direitos reservados.</p>
+        <p class="text-slate-500 text-[11px] mt-0.5">Análise processada em tempo real utilizando inteligência artificial.</p>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="https://sites.google.com/view/atuacao-parlamentar-fb" target="_blank" class="hover:text-blue-400 transition-colors">Google Sites</a>
+        <a href="https://www.joalisson.com/votos-do-flavio-bolsonaro" target="_blank" class="hover:text-blue-400 transition-colors">Joalisson.com</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
     if (window.lucide) { lucide.createIcons(); }
@@ -263,11 +289,11 @@
       const selectedTopics = Array.from(document.querySelectorAll('.topic-checkbox:checked')).map(cb => cb.value);
 
       if (selectedTopics.length === 0) {
-        alert("Selecione ao menos 1 tema!");
+        alert("Selecione ao menos 1 tema prioritário!");
         return;
       }
 
-      // UI State: Carregando
+      // Estado Visual de Carregamento
       const btn = document.getElementById('btn-submit');
       const btnText = document.getElementById('btn-text');
       btn.disabled = true;
@@ -291,8 +317,8 @@
           return;
         }
 
-        // Atualiza Interface
-        document.getElementById('user-profile-summary').innerText = `Perfil: R$ ${incomeStr} • Região ${region}`;
+        // Atualiza Resumo e Percentuais
+        document.getElementById('user-profile-summary').innerText = `Perfil: R$ ${incomeStr} • Região ${region} • ${selectedTopics.length} tema(s)`;
         
         document.getElementById('score-flavio-badge').innerText = `${result.flavioPercent}%`;
         document.getElementById('bar-flavio').style.width = `${result.flavioPercent}%`;
@@ -302,34 +328,71 @@
         document.getElementById('bar-lula').style.width = `${result.lulaPercent}%`;
         document.getElementById('lula-summary-text').innerText = result.lulaSummary;
 
-        // Renderiza Detalhes
+        // Renderiza Detalhes com Sistema de Abas (UI Limpa)
         const container = document.getElementById('topic-details-container');
         container.innerHTML = '';
 
-        result.details.forEach(item => {
+        result.details.forEach((item, index) => {
           const cardHTML = `
-            <div class="glass-card rounded-xl p-5 space-y-4">
-              <h4 class="font-bold text-white text-sm border-b border-slate-800 pb-2">${item.topicTitle}</h4>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-                <!-- Flávio -->
-                <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 space-y-2">
-                  <span class="font-bold text-blue-400">Flávio Bolsonaro</span>
-                  <p class="text-slate-200 font-medium">${item.flavioTitle}</p>
-                  <p class="text-amber-300/90 text-[11px] leading-relaxed pt-1 border-t border-slate-800">${item.flavioSideEffect}</p>
+            <div class="glass-card rounded-2xl p-5 space-y-4 border border-slate-800">
+              <!-- Cabeçalho do Tema -->
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <h4 class="font-bold text-white text-base flex items-center space-x-2">
+                  <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                  <span>${item.topicTitle}</span>
+                </h4>
+                <span class="text-[11px] text-slate-400 bg-slate-900 px-2.5 py-1 rounded-md border border-slate-800">Toque para alternar</span>
+              </div>
+
+              <!-- Sistema de Abas para Alternar entre Candidatos -->
+              <div class="flex rounded-xl bg-slate-900 p-1 border border-slate-800">
+                <button onclick="switchCandidateTab(${index}, 'flavio')" id="tab-flavio-${index}" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-blue-600 text-white shadow-sm flex items-center justify-center space-x-1.5">
+                  <span>Flávio Bolsonaro</span>
+                </button>
+                <button onclick="switchCandidateTab(${index}, 'lula')" id="tab-lula-${index}" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center justify-center space-x-1.5">
+                  <span>Lula da Silva</span>
+                </button>
+              </div>
+
+              <!-- Conteúdo da Aba: Flávio Bolsonaro -->
+              <div id="content-flavio-${index}" class="space-y-3 pt-1">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Diretriz Proposta</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">Candidato PL</span>
                 </div>
-                <!-- Lula -->
-                <div class="bg-slate-900/60 p-4 rounded-lg border border-slate-800 space-y-2">
-                  <span class="font-bold text-red-400">Lula da Silva</span>
-                  <p class="text-slate-200 font-medium">${item.lulaTitle}</p>
-                  <p class="text-emerald-300/90 text-[11px] leading-relaxed pt-1 border-t border-slate-800">${item.lulaSideEffect}</p>
+                <p class="text-sm font-semibold text-slate-100">${item.flavioTitle}</p>
+                <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                  <span class="text-[11px] font-bold text-amber-400 flex items-center space-x-1">
+                    <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+                    <span>Efeito Colateral no seu Orçamento:</span>
+                  </span>
+                  <p class="text-xs text-slate-300 leading-relaxed">${item.flavioSideEffect}</p>
                 </div>
               </div>
+
+              <!-- Conteúdo da Aba: Lula da Silva (Oculto Inicialmente) -->
+              <div id="content-lula-${index}" class="space-y-3 pt-1 hidden">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Diretriz Proposta</span>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-300 border border-red-500/20">Candidato PT</span>
+                </div>
+                <p class="text-sm font-semibold text-slate-100">${item.lulaTitle}</p>
+                <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                  <span class="text-[11px] font-bold text-emerald-400 flex items-center space-x-1">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                    <span>Efeito Colateral no seu Orçamento:</span>
+                  </span>
+                  <p class="text-xs text-slate-300 leading-relaxed">${item.lulaSideEffect}</p>
+                </div>
+              </div>
+
             </div>
           `;
           container.innerHTML += cardHTML;
         });
 
         document.getElementById('results-section').classList.remove('hidden');
+        if (window.lucide) { lucide.createIcons(); }
         renderChart(result.flavioPercent, result.lulaPercent);
         document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
 
@@ -339,6 +402,26 @@
       } finally {
         btn.disabled = false;
         btnText.innerText = 'Analisar via IA (Gemini)';
+      }
+    }
+
+    // Função de Troca de Abas
+    function switchCandidateTab(index, candidate) {
+      const tabFlavio = document.getElementById(`tab-flavio-${index}`);
+      const tabLula = document.getElementById(`tab-lula-${index}`);
+      const contentFlavio = document.getElementById(`content-flavio-${index}`);
+      const contentLula = document.getElementById(`content-lula-${index}`);
+
+      if (candidate === 'flavio') {
+        tabFlavio.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-blue-600 text-white shadow-sm flex items-center justify-center space-x-1.5";
+        tabLula.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center justify-center space-x-1.5";
+        contentFlavio.classList.remove('hidden');
+        contentLula.classList.add('hidden');
+      } else {
+        tabLula.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-red-600 text-white shadow-sm flex items-center justify-center space-x-1.5";
+        tabFlavio.className = "flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center justify-center space-x-1.5";
+        contentLula.classList.remove('hidden');
+        contentFlavio.classList.add('hidden');
       }
     }
 
