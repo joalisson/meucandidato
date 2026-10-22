@@ -21,14 +21,6 @@
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .glass-card-hover {
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .glass-card-hover:hover {
-      border-color: rgba(59, 130, 246, 0.4);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.5);
-    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-blue-500 selection:text-white">
@@ -46,7 +38,6 @@
         </div>
       </div>
       
-      <!-- Botão Voltar -->
       <a href="site-politico.html" class="inline-flex items-center space-x-2 text-xs text-slate-300 hover:text-white bg-slate-800/80 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors">
         <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
         <span>Voltar ao Portal</span>
@@ -57,7 +48,6 @@
   <!-- Conteúdo Principal -->
   <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10 flex-grow">
     
-    <!-- Hero / Apresentação -->
     <section class="text-center max-w-3xl mx-auto space-y-4">
       <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-semibold uppercase tracking-wider">
         <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
@@ -67,14 +57,13 @@
         Quais os efeitos colaterais das propostas no seu bolso?
       </h1>
       <p class="text-slate-300 text-base sm:text-lg font-normal leading-relaxed">
-        Informe a sua <strong class="text-white">renda mensal</strong> e <strong class="text-white">região</strong>. A Inteligência Artificial processa o perfil para calcular os impactos reais e os riscos socioeconômicos das propostas de <strong class="text-blue-400">Flávio Bolsonaro</strong> e <strong class="text-red-400">Lula da Silva</strong>.
+        Informe a sua <strong class="text-white">renda mensal</strong> e <strong class="text-white">região</strong>. A Inteligência Artificial processa o perfil para calcular os impactos reais e os riscos socioeconômicos.
       </p>
     </section>
 
     <!-- Formulário Interativo -->
     <section class="glass-card rounded-2xl p-6 sm:p-8 space-y-8">
       
-      <!-- Passo 1: Perfil Socioeconômico -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- Campo Renda -->
@@ -94,7 +83,6 @@
               class="w-full bg-slate-900 border border-slate-700 rounded-xl pl-12 pr-4 py-2.5 text-white font-mono font-bold focus:outline-none focus:border-blue-500 transition-all text-lg"
             >
           </div>
-          <p class="text-[11px] text-slate-400">Exemplo: 1.412,00 ou 4.000,00 (Apenas numerais).</p>
         </div>
 
         <!-- Campo Região -->
@@ -114,7 +102,7 @@
 
       </div>
 
-      <!-- Passo 2: Temas de Interesse -->
+      <!-- Temas -->
       <div class="space-y-4 pt-4 border-t border-slate-800">
         <label class="block text-sm font-bold text-white flex items-center space-x-2">
           <span class="w-6 h-6 rounded-full bg-blue-600/30 text-blue-400 flex items-center justify-center text-xs">3</span>
@@ -123,43 +111,23 @@
 
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
           <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Saúde Pública & Gestão do SUS" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0" checked>
+            <input type="checkbox" value="Saúde Pública & Gestão do SUS" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Saúde & SUS</span>
           </label>
 
           <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Direitos Trabalhistas & Escala 6x1" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0" checked>
+            <input type="checkbox" value="Direitos Trabalhistas & Escala 6x1" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Emprego / Escala 6x1</span>
           </label>
 
           <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Impostos sobre Renda e Consumo" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0" checked>
+            <input type="checkbox" value="Impostos sobre Renda e Consumo" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Impostos & Renda</span>
           </label>
 
           <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Poder de Compra & Inflação" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0" checked>
+            <input type="checkbox" value="Poder de Compra & Inflação" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700" checked>
             <span class="text-xs sm:text-sm font-medium text-slate-200">Poder de Compra</span>
-          </label>
-
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Educação Pública vs Vouchers Privados" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0">
-            <span class="text-xs sm:text-sm font-medium text-slate-200">Educação Pública</span>
-          </label>
-
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Segurança Pública & Porte de Armas" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0">
-            <span class="text-xs sm:text-sm font-medium text-slate-200">Segurança Pública</span>
-          </label>
-
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Agronegócio & Meio Ambiente" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0">
-            <span class="text-xs sm:text-sm font-medium text-slate-200">Agronegócio & Clima</span>
-          </label>
-
-          <label class="topic-card cursor-pointer bg-slate-900/80 border border-slate-800 hover:border-slate-700 p-3.5 rounded-xl flex items-center space-x-3 transition-all">
-            <input type="checkbox" value="Judiciário & Relação com o STF" class="topic-checkbox w-4 h-4 rounded text-blue-600 bg-slate-800 border-slate-700 focus:ring-0">
-            <span class="text-xs sm:text-sm font-medium text-slate-200">Judiciário & STF</span>
           </label>
         </div>
       </div>
@@ -167,7 +135,7 @@
       <!-- Botão Gerar -->
       <div class="pt-2">
         <button id="btn-submit" onclick="generateAIAnalysis()" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 font-bold text-white text-sm transition-all flex items-center justify-center space-x-2 shadow-lg shadow-blue-600/30">
-          <i data-lucide="sparkles" class="w-4 h-4"></i>
+          <i data-lucide="sparkles" class="w-4 h-4" id="btn-icon"></i>
           <span id="btn-text">Analisar via IA (Gemini)</span>
         </button>
       </div>
@@ -188,10 +156,9 @@
         <span class="text-xs text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 font-medium">Divisão Proporcional Exata (100%)</span>
       </div>
 
-      <!-- Placar Geral e Gráfico -->
+      <!-- Placar -->
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
-        <!-- Score Flávio -->
         <div class="glass-card rounded-2xl p-6 border-t-4 border-t-blue-500 flex flex-col justify-between">
           <div>
             <div class="flex justify-between items-start">
@@ -199,7 +166,6 @@
                 <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Candidato PL</span>
                 <h3 class="text-2xl font-black text-white mt-1" id="score-flavio-badge">0%</h3>
               </div>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">Flávio Bolsonaro</span>
             </div>
             <div class="mt-4 space-y-2">
               <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
@@ -207,10 +173,9 @@
               </div>
             </div>
           </div>
-          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="flavio-summary-text">Aguardando análise da IA...</p>
+          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="flavio-summary-text">-</p>
         </div>
 
-        <!-- Gráfico de Rosca -->
         <div class="glass-card rounded-2xl p-6 flex flex-col items-center justify-center">
           <h4 class="text-xs uppercase font-semibold text-slate-400 tracking-wider mb-4">Divisão Proporcional (100%)</h4>
           <div class="w-full max-w-[200px] relative">
@@ -218,7 +183,6 @@
           </div>
         </div>
 
-        <!-- Score Lula -->
         <div class="glass-card rounded-2xl p-6 border-t-4 border-t-red-500 flex flex-col justify-between">
           <div>
             <div class="flex justify-between items-start">
@@ -226,7 +190,6 @@
                 <span class="text-xs font-bold text-red-400 uppercase tracking-wider">Candidato PT</span>
                 <h3 class="text-2xl font-black text-white mt-1" id="score-lula-badge">0%</h3>
               </div>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-300 border border-red-500/20">Lula da Silva</span>
             </div>
             <div class="mt-4 space-y-2">
               <div class="w-full bg-slate-800 h-3 rounded-full overflow-hidden">
@@ -234,21 +197,19 @@
               </div>
             </div>
           </div>
-          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="lula-summary-text">Aguardando análise da IA...</p>
+          <p class="text-xs text-slate-300 mt-6 leading-relaxed" id="lula-summary-text">-</p>
         </div>
 
       </div>
 
-      <!-- Detalhamento Otimizado com Sistema de Abas (UI Limpa) -->
+      <!-- Detalhamento em Abas -->
       <div class="space-y-4">
         <h3 class="text-lg font-bold text-white flex items-center space-x-2">
           <i data-lucide="layers" class="w-5 h-5 text-amber-400"></i>
           <span>Detalhamento por Tema e Comparativo de Abas</span>
         </h3>
 
-        <div id="topic-details-container" class="space-y-4">
-          <!-- Injetado dinamicamente via JavaScript -->
-        </div>
+        <div id="topic-details-container" class="space-y-4"></div>
       </div>
 
     </section>
@@ -260,11 +221,6 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
       <div>
         <p>© 2026 Desenvolvido por <strong class="text-slate-200">Joalisson Andrade</strong>. Todos os direitos reservados.</p>
-        <p class="text-slate-500 text-[11px] mt-0.5">Análise processada em tempo real utilizando inteligência artificial.</p>
-      </div>
-      <div class="flex items-center space-x-4">
-        <a href="https://sites.google.com/view/atuacao-parlamentar-fb" target="_blank" class="hover:text-blue-400 transition-colors">Google Sites</a>
-        <a href="https://www.joalisson.com/votos-do-flavio-bolsonaro" target="_blank" class="hover:text-blue-400 transition-colors">Joalisson.com</a>
       </div>
     </div>
   </footer>
@@ -282,7 +238,9 @@
     }
 
     let chartInstance = null;
+    let loadingInterval = null;
 
+    // Função Principal com Auto-Retry e Mensagens Dinâmicas em Loop
     async function generateAIAnalysis() {
       const incomeStr = document.getElementById('user-income').value;
       const region = document.getElementById('user-region').value;
@@ -293,119 +251,150 @@
         return;
       }
 
-      // Estado Visual de Carregamento
       const btn = document.getElementById('btn-submit');
       const btnText = document.getElementById('btn-text');
       btn.disabled = true;
-      btnText.innerText = 'Processando na IA...';
 
-      try {
-        const response = await fetch('/api/analisar', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            income: incomeStr,
-            region: region,
-            topics: selectedTopics
-          })
-        });
+      // Mensagens dinâmicas em loop no botão
+      const loadingMessages = [
+        "Enviando dados...",
+        "Analisando resposta...",
+        "Processando com IA...",
+        "Consultando planos de governo...",
+        "Calculando impactos..."
+      ];
+      
+      let msgIndex = 0;
+      btnText.innerText = loadingMessages[0];
+      
+      loadingInterval = setInterval(() => {
+        msgIndex = (msgIndex + 1) % loadingMessages.length;
+        btnText.innerText = loadingMessages[msgIndex];
+      }, 2000);
 
-        const result = await response.json();
+      let maxRetries = 3;
+      let attempt = 0;
+      let result = null;
 
-        if (result.error) {
-          alert('Erro na IA: ' + result.error);
-          return;
+      // Lógica de Tentativa Automática (Auto-Retry)
+      while (attempt < maxRetries) {
+        try {
+          attempt++;
+          const response = await fetch('/api/analisar', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              income: incomeStr,
+              region: region,
+              topics: selectedTopics
+            })
+          });
+
+          result = await response.json();
+
+          if (!result.error) {
+            break; // Sucesso, sai do loop de retentativa
+          } else {
+            console.warn(`Tentativa ${attempt} falhou:`, result.error);
+            if (attempt < maxRetries) {
+              btnText.innerText = `Alta demanda. Tentando de novo (${attempt}/${maxRetries})...`;
+              await new Promise(r => setTimeout(r, 3000)); // Aguarda 3 segundos antes de tentar novamente
+            }
+          }
+        } catch (err) {
+          console.warn(`Erro de rede na tentativa ${attempt}:`, err);
+          if (attempt < maxRetries) {
+            btnText.innerText = `Reconectando (${attempt}/${maxRetries})...`;
+            await new Promise(r => setTimeout(r, 3000));
+          } else {
+            throw err;
+          }
         }
-
-        // Atualiza Resumo e Percentuais
-        document.getElementById('user-profile-summary').innerText = `Perfil: R$ ${incomeStr} • Região ${region} • ${selectedTopics.length} tema(s)`;
-        
-        document.getElementById('score-flavio-badge').innerText = `${result.flavioPercent}%`;
-        document.getElementById('bar-flavio').style.width = `${result.flavioPercent}%`;
-        document.getElementById('flavio-summary-text').innerText = result.flavioSummary;
-
-        document.getElementById('score-lula-badge').innerText = `${result.lulaPercent}%`;
-        document.getElementById('bar-lula').style.width = `${result.lulaPercent}%`;
-        document.getElementById('lula-summary-text').innerText = result.lulaSummary;
-
-        // Renderiza Detalhes com Sistema de Abas (UI Limpa)
-        const container = document.getElementById('topic-details-container');
-        container.innerHTML = '';
-
-        result.details.forEach((item, index) => {
-          const cardHTML = `
-            <div class="glass-card rounded-2xl p-5 space-y-4 border border-slate-800">
-              <!-- Cabeçalho do Tema -->
-              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <h4 class="font-bold text-white text-base flex items-center space-x-2">
-                  <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                  <span>${item.topicTitle}</span>
-                </h4>
-                <span class="text-[11px] text-slate-400 bg-slate-900 px-2.5 py-1 rounded-md border border-slate-800">Toque para alternar</span>
-              </div>
-
-              <!-- Sistema de Abas para Alternar entre Candidatos -->
-              <div class="flex rounded-xl bg-slate-900 p-1 border border-slate-800">
-                <button onclick="switchCandidateTab(${index}, 'flavio')" id="tab-flavio-${index}" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-blue-600 text-white shadow-sm flex items-center justify-center space-x-1.5">
-                  <span>Flávio Bolsonaro</span>
-                </button>
-                <button onclick="switchCandidateTab(${index}, 'lula')" id="tab-lula-${index}" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center justify-center space-x-1.5">
-                  <span>Lula da Silva</span>
-                </button>
-              </div>
-
-              <!-- Conteúdo da Aba: Flávio Bolsonaro -->
-              <div id="content-flavio-${index}" class="space-y-3 pt-1">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Diretriz Proposta</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">Candidato PL</span>
-                </div>
-                <p class="text-sm font-semibold text-slate-100">${item.flavioTitle}</p>
-                <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 space-y-1">
-                  <span class="text-[11px] font-bold text-amber-400 flex items-center space-x-1">
-                    <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
-                    <span>Efeito Colateral no seu Orçamento:</span>
-                  </span>
-                  <p class="text-xs text-slate-300 leading-relaxed">${item.flavioSideEffect}</p>
-                </div>
-              </div>
-
-              <!-- Conteúdo da Aba: Lula da Silva (Oculto Inicialmente) -->
-              <div id="content-lula-${index}" class="space-y-3 pt-1 hidden">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Diretriz Proposta</span>
-                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-300 border border-red-500/20">Candidato PT</span>
-                </div>
-                <p class="text-sm font-semibold text-slate-100">${item.lulaTitle}</p>
-                <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 space-y-1">
-                  <span class="text-[11px] font-bold text-emerald-400 flex items-center space-x-1">
-                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
-                    <span>Efeito Colateral no seu Orçamento:</span>
-                  </span>
-                  <p class="text-xs text-slate-300 leading-relaxed">${item.lulaSideEffect}</p>
-                </div>
-              </div>
-
-            </div>
-          `;
-          container.innerHTML += cardHTML;
-        });
-
-        document.getElementById('results-section').classList.remove('hidden');
-        if (window.lucide) { lucide.createIcons(); }
-        renderChart(result.flavioPercent, result.lulaPercent);
-        document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
-
-      } catch (err) {
-        console.error(err);
-        alert('Ocorreu uma falha na comunicação com o servidor da IA.');
-      } finally {
-        btn.disabled = false;
-        btnText.innerText = 'Analisar via IA (Gemini)';
       }
+
+      clearInterval(loadingInterval);
+      btn.disabled = false;
+      btnText.innerText = 'Analisar via IA (Gemini)';
+
+      if (!result || result.error) {
+        alert('A IA está com alta demanda no momento. O sistema tentou reconectar automaticamente, mas não obteve resposta. Por favor, clique novamente.');
+        return;
+      }
+
+      // Renderização bem-sucedida dos dados
+      document.getElementById('user-profile-summary').innerText = `Perfil: R$ ${incomeStr} • Região ${region} • ${selectedTopics.length} tema(s)`;
+      
+      document.getElementById('score-flavio-badge').innerText = `${result.flavioPercent}%`;
+      document.getElementById('bar-flavio').style.width = `${result.flavioPercent}%`;
+      document.getElementById('flavio-summary-text').innerText = result.flavioSummary;
+
+      document.getElementById('score-lula-badge').innerText = `${result.lulaPercent}%`;
+      document.getElementById('bar-lula').style.width = `${result.lulaPercent}%`;
+      document.getElementById('lula-summary-text').innerText = result.lulaSummary;
+
+      const container = document.getElementById('topic-details-container');
+      container.innerHTML = '';
+
+      result.details.forEach((item, index) => {
+        const cardHTML = `
+          <div class="glass-card rounded-2xl p-5 space-y-4 border border-slate-800">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <h4 class="font-bold text-white text-base flex items-center space-x-2">
+                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                <span>${item.topicTitle}</span>
+              </h4>
+              <span class="text-[11px] text-slate-400 bg-slate-900 px-2.5 py-1 rounded-md border border-slate-800">Toque para alternar</span>
+            </div>
+
+            <div class="flex rounded-xl bg-slate-900 p-1 border border-slate-800">
+              <button onclick="switchCandidateTab(${index}, 'flavio')" id="tab-flavio-${index}" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all bg-blue-600 text-white shadow-sm flex items-center justify-center space-x-1.5">
+                <span>Flávio Bolsonaro</span>
+              </button>
+              <button onclick="switchCandidateTab(${index}, 'lula')" id="tab-lula-${index}" class="flex-1 py-2 text-xs font-bold rounded-lg transition-all text-slate-400 hover:text-white flex items-center justify-center space-x-1.5">
+                <span>Lula da Silva</span>
+              </button>
+            </div>
+
+            <div id="content-flavio-${index}" class="space-y-3 pt-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Diretriz Proposta</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500/10 text-blue-300 border border-blue-500/20">Candidato PL</span>
+              </div>
+              <p class="text-sm font-semibold text-slate-100">${item.flavioTitle}</p>
+              <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                <span class="text-[11px] font-bold text-amber-400 flex items-center space-x-1">
+                  <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+                  <span>Efeito Colateral no seu Orçamento:</span>
+                </span>
+                <p class="text-xs text-slate-300 leading-relaxed">${item.flavioSideEffect}</p>
+              </div>
+            </div>
+
+            <div id="content-lula-${index}" class="space-y-3 pt-1 hidden">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-red-400 uppercase tracking-wider">Diretriz Proposta</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-red-500/10 text-red-300 border border-red-500/20">Candidato PT</span>
+              </div>
+              <p class="text-sm font-semibold text-slate-100">${item.lulaTitle}</p>
+              <div class="bg-slate-900/80 p-3.5 rounded-xl border border-slate-800 space-y-1">
+                <span class="text-[11px] font-bold text-emerald-400 flex items-center space-x-1">
+                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i>
+                  <span>Efeito Colateral no seu Orçamento:</span>
+                </span>
+                <p class="text-xs text-slate-300 leading-relaxed">${item.lulaSideEffect}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        container.innerHTML += cardHTML;
+      });
+
+      document.getElementById('results-section').classList.remove('hidden');
+      if (window.lucide) { lucide.createIcons(); }
+      renderChart(result.flavioPercent, result.lulaPercent);
+      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Função de Troca de Abas
     function switchCandidateTab(index, candidate) {
       const tabFlavio = document.getElementById(`tab-flavio-${index}`);
       const tabLula = document.getElementById(`tab-lula-${index}`);
