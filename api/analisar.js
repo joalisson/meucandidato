@@ -1,5 +1,6 @@
-// api/analisar.js (Versão Blindada contra Erros da API)
+// api/analisar.js (Versão com Endpoint do Gemini Atualizado)
 export default async function handler(req, res) {
+  // Configurações de CORS para requisições do frontend
   res.setHeader('Access-Control-Allow-Credentials', true);
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
@@ -22,7 +23,7 @@ export default async function handler(req, res) {
     const apiKey = process.env.GEMINI_API_KEY;
 
     if (!apiKey) {
-      return res.status(500).json({ error: 'Chave da API do Gemini não configurada nas variáveis de ambiente.' });
+      return res.status(500).json({ error: 'Chave GEMINI_API_KEY não configurada na Vercel.' });
     }
 
     const prompt = `
@@ -51,8 +52,9 @@ Sua resposta DEVE ser estritamente em formato JSON válido (sem textos antes ou 
 }
 `;
 
+    // Endpoint atualizado utilizando a família de modelos Gemini Flash ativos
     const apiResponse = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -66,25 +68,23 @@ Sua resposta DEVE ser estritamente em formato JSON válido (sem textos antes ou 
     const data = await apiResponse.json();
 
     if (!apiResponse.ok) {
-      console.error('Erro na resposta do Google:', data);
-      return res.status(500).json({ error: 'Erro retornado pela API do Gemini.' });
+      console.error('Erro retornado pela API do Google:', data);
+      return res.status(500).json({ error: data.error?.message || 'Erro de comunicação com a API do Gemini.' });
     }
 
-    // Verificações de segurança para evitar quebre de índice indefinido
     if (!data.candidates || data.candidates.length === 0 || !data.candidates[0].content) {
-      console.error('A API do Gemini bloqueou ou retornou estrutura vazia:', JSON.stringify(data));
-      return res.status(500).json({ error: 'A IA retornou uma resposta vazia ou bloqueada por filtros de segurança.' });
+      return res.status(500).json({ error: 'A IA não retornou um conteúdo válido para este perfil.' });
     }
 
     const rawText = data.candidates[0].content.parts[0].text;
     
-    // Limpa eventuais marcações de markdown e faz o parse
+    // Tratamento para garantir a limpeza de eventuais marcadores markdown
     const cleanJsonText = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
     const jsonResult = JSON.parse(cleanJsonText);
 
     return res.status(200).json(jsonResult);
   } catch (error) {
-    console.error('Erro crítico na Serverless Function:', error);
-    return res.status(500).json({ error: 'Falha interna ao processar com a IA: ' + error.message });
+    console.error('Erro na Serverless Function:', error);
+    return res.status(500).json({ error: 'Falha interna no servidor: ' + error.message });
   }
 }
